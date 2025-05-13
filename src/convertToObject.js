@@ -5,8 +5,24 @@
  *
  * @return {object}
  */
-function convertToObject(sourceString) {
-  // write your code here
-}
+function convertToObject(styles) {
+  const lines = styles.split(';');
+  const result = {};
 
+  for (let line of lines) {
+    line = line.trim();
+
+    if (!line) {
+      continue;
+    }
+
+    const [prop, val] = line.split(':');
+
+    if (prop && val) {
+      result[prop.trim()] = val.trim();
+    }
+  }
+
+  return result;
+}
 module.exports = convertToObject;
