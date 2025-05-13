@@ -5,8 +5,8 @@
  *
  * @return {object}
  */
-function convertToObject(styles) {
-  const lines = styles.split(';');
+function convertToObject(sourceString) {
+  const lines = sourceString.split(';');
   const result = {};
 
   for (let line of lines) {
